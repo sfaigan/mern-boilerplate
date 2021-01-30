@@ -4,16 +4,23 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 import tasksRouter from "./routes/tasks";
+import path from "path";
 
 dotenv.config();
 
 const PORT = process.env.SERVER_PORT || 3001;
 const DB_URI =
   process.env.DB_URI || "mongodb://127.0.0.1:27017/mern-boilerplate";
+const CLIENT_BUILD_RELATIVE_PATH = "../../client/build";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use(
+  "/static",
+  express.static(path.join(__dirname, CLIENT_BUILD_RELATIVE_PATH + "/static"))
+);
 
 try {
   mongoose.connect(DB_URI, {
@@ -32,6 +39,10 @@ connection.once("open", () => {
 });
 
 app.use("/api/tasks", tasksRouter);
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, CLIENT_BUILD_RELATIVE_PATH, "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}...`);

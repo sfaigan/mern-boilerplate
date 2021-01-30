@@ -19,7 +19,8 @@
     "eqeqeq": "error",
     "no-var": "error",
     "prefer-const": "error",
-    "prefer-arrow-callback": "error"
+    "prefer-arrow-callback": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "warn"
   },
   "overrides": [
     {
