@@ -1,0 +1,34 @@
+{
+  "name": "mern-boilerplate",
+  "version": "1.0.0",
+  "description": "MERN Stack Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "server:dev": "cd server && npm run dev",
+    "server:prod": "cd server && npm run start",
+    "lint": "eslint \"**/src/**/*.{ts,tsx}\"",
+    "lint:fix": "eslint --fix \"**/src/**/*.{ts,tsx}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfaigan/mern-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfaigan/mern-boilerplate/issues"
+  },
+  "homepage": "https://github.com/sfaigan/mern-boilerplate#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}
