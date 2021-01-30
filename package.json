@@ -4,15 +4,16 @@
   "description": "MERN Stack Boilerplate",
   "main": "index.js",
   "scripts": {
-    "client:dev": "cd client && npm run start",
-    "client:build": "cd client && npm run build && cd ..",
-    "server:dev": "cd server && npm run dev",
-    "server:prod": "cd server && npm run start",
+    "client:dev": "(cd client && npm run start);",
+    "client:build": "(cd client && npm run build);",
+    "server:dev": "(cd server && npm run dev);",
+    "server:prod": "(cd server && npm run start);",
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "prod": "npm run client:build && npm run server:prod",
     "lint": "eslint \"**/src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/src/**/*.{ts,tsx}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "(cd client && npm install); (cd server && npm install);"
   },
   "repository": {
     "type": "git",
